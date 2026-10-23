@@ -134,7 +134,7 @@ export default function (pi: ExtensionAPI) {
 		ensureConfigExists();
 		config = loadConfig((msg, level) => ctx.ui.notify(msg, level));
 
-		if (isInteractiveLaunch() && config.enabled) {
+		if (isInteractiveLaunch() && config.enabled && isTuiContext(ctx)) {
 			clearVisibleScreen();
 		}
 
